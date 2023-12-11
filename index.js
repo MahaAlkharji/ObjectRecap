@@ -42,9 +42,9 @@ ANSWER: 8398748
 **********/
 
 function getCityPopulation(city) {
-  // Your code here
+  return city.population;
 }
-// console.log(getCityPopulation(cities[0]));
+console.log(getCityPopulation(cities[0]));
 
 /**********
 Question 2:
@@ -57,9 +57,9 @@ ANSWER: true
 **********/
 
 function isPopulationAboveThreshold(city, threshold) {
-  // Your code here
+  return city.population >= threshold;
 }
-// console.log(isPopulationAboveThreshold(cities[1], 2000000));
+console.log(isPopulationAboveThreshold(cities[1], 2000000));
 
 /**********
 Question 3:
@@ -110,16 +110,19 @@ ANSWER:
 **********/
 
 function addCity(cities, city) {
-  // Your code here
+  //return (cities.country = city);
+  cities.push(city);
+  return cities;
 }
 
-// const newCity = {
-//   "id": 306,
-//   "population": 1200000,
-//   "country": "Canada"
-// };
+const newCity = {
+  id: 306,
+  population: 1200000,
+  country: "Canada",
+};
 
-// console.log(addCity(cities, newCity));
+console.log(addCity(cities, newCity));
+console.log(cities);
 
 /**********
 Question 4:
@@ -132,6 +135,7 @@ ANSWER: 1
 **********/
 
 function countCitiesInCountry(cities, country) {
-  // Your code here
+  const noc = cities.filter((city) => city.country == country);
+  return noc.length;
 }
-// console.log(countCitiesInCountry(cities, "France"));
+console.log(countCitiesInCountry(cities, "France"));
